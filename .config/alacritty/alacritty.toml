@@ -1,0 +1,12 @@
+[window]
+decorations = "None"
+
+[colors.primary]
+foreground = "#ffffff"
+background = "#16181C"
+
+[cursor.style]
+shape = "Beam"
+
+[font]
+size = 10

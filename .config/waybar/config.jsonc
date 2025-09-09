@@ -1,0 +1,79 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-bottom": 5,
+    "height": 30,
+    "modules-left": [
+	    "hyprland/window"
+    ],
+    "modules-center": [
+ 	    "hyprland/workspaces"
+    ],
+    "modules-right": [
+	    "pulseaudio",
+        "network",
+	    "temperature",
+	    "clock"
+    ],
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 45,
+        "rewrite": {
+            "": "Harsh"
+        },
+        "separate-outputs": true
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": " "
+        },
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "*": 6
+        }
+    },
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d.%m.%Y}"
+    },
+    "temperature": {
+        "format": " {temperatureC}°C"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "  {signalStrength}%  {bandwidthDownBytes}  {bandwidthUpBytes} ",
+        "format-ethernet": "   {bandwidthDownBytes}  {bandwidthUpBytes} ",
+        "format-disconnected": "Not connected",
+        "tooltip-format": "  {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "interval": 1,
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": "MUTE {icon} ",
+        "format-muted": "<",
+        "format-icons": {
+            "headphone": "HP",
+            "hands-free": "HF",
+            "headset": "HS",
+            "phone": "PH",
+            "portable": "PO",
+            "car": "CAR",
+            "default": [
+	        "LOW",
+                "MID",
+                "LOUD"
+            ]
+        },
+        "on-click": "pavucontrol"
+  }
+}

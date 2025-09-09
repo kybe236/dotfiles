@@ -1,0 +1,4 @@
+[color]
+foreground = '#16181C'
+[smoothing]
+noise_reduction = 65
